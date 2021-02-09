@@ -2,6 +2,7 @@ package miras.sungat.amiran.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity(name = "UserEntity")
 @Table(name = "users")
@@ -10,7 +11,8 @@ public class User implements Serializable
     private long id;
     private String username;
     private String password;
-    //private Role role;
+    private Role role;
+    //TODO how PERSISTENSE WORK? private List<Book> books;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,7 +44,7 @@ public class User implements Serializable
         this.password = password;
     }
 
-    /*@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "role_id")
     public Role getRole()
     {
@@ -51,5 +53,5 @@ public class User implements Serializable
     public void setRole(Role role)
     {
         this.role = role;
-    }*/
+    }
 }
