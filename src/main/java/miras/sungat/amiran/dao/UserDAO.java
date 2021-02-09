@@ -1,6 +1,7 @@
 package miras.sungat.amiran.dao;
 
 
+import miras.sungat.amiran.model.Role;
 import miras.sungat.amiran.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -50,7 +51,7 @@ public class UserDAO
         }
         return user;
     }
-    /*public void addUser(User user)
+    public void addUser(User user)
     {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -59,8 +60,7 @@ public class UserDAO
             CriteriaBuilder builder1 = session.getCriteriaBuilder();
             CriteriaQuery<Role> q1 = builder1.createQuery(Role.class);
             Root<Role> root1 = q1.from(Role.class);
-
-            Predicate predicateRole = builder1.equal(root1.get("name"), "ROLE_USER");
+            Predicate predicateRole = builder1.equal(root1.get("name"), "ROLE_STUDENT");
             //Predicate predicateRole = builder1.equal(root1.get("name"), "ROLE_ADMIN");
             Role role = session.createQuery(q1.where(predicateRole)).getSingleResult();
             user.setRole(role);
@@ -72,5 +72,5 @@ public class UserDAO
         {
             //session.close();
         }
-    }*/
+    }
 }
