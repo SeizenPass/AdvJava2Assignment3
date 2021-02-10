@@ -3,6 +3,6 @@
     <Resource name="jdbc/week" auth="Container"
               type="javax.sql.DataSource" username="postgres" password="postgres"
               driverClassName="org.postgresql.Driver"
-              url="jdbc:postgresql://localhost:5432/portal"
+              url="jdbc:postgresql://localhost:5432/librarydb"
               maxActive="10" maxIdle="4" />
 </Context>
